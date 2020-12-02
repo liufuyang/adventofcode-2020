@@ -1,9 +1,8 @@
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
-use std::collections::HashMap;
 
-fn main() -> io::Result<()>{
-
+fn main() -> io::Result<()> {
     let file = File::open("./examples/day1/input_example.txt")?;
     let mut map = HashMap::new();
 
@@ -33,9 +32,9 @@ fn main() -> io::Result<()>{
                 match map.get(&(counter_part)) {
                     Some(_) => {
                         println!("Found 2 sum result: {}", counter_part * num * k);
-                        return Ok(())
+                        return Ok(());
                     }
-                    None => ()
+                    None => (),
                 }
             }
         }
