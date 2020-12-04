@@ -1,8 +1,6 @@
-use std::collections::HashMap;
-use std::fs::File;
-use std::io::{self, BufRead, BufReader};
-
 use std::error::Error;
+use std::fs::File;
+use std::io::{BufRead, BufReader};
 
 fn main() -> Result<(), Box<dyn Error>> {
     let file = File::open("./examples/day3/input.txt")?;
@@ -21,7 +19,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             }
             match element.chars().nth(pos) {
                 Some('#') => (pos + right_n, acc + 1),
-                _ => (pos + right_n, acc)
+                _ => (pos + right_n, acc),
             }
         });
     println!("Result: {:?}", count);
