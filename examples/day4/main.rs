@@ -33,7 +33,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .map(|passport: String| {
             let fields_vec: Vec<String> = passport
                 .split_whitespace()
-                .filter(|field| field.len() >= 3)
+                .filter(|field| field.len() >= 5)
                 .map(|field| to_valid_key(field))
                 .collect();
             HashSet::from_iter(fields_vec)
