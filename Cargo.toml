@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 recap = "0.1.1"
 serde = "1.0.117"
+itertools = "0.9.0"
